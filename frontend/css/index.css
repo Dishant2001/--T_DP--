@@ -10,3 +10,38 @@
     width: 70%;
     margin: auto;
 }
+
+#projects{
+    text-align: center;
+    margin: auto;
+}
+
+.blogs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;justify-content: space-between;
+    padding: 50px;
+}
+.card{
+    width: 30%;
+    height: 50px;
+    margin: auto;
+}
+
+.blog-content{
+    display: none;
+    position: absolute;
+    float: left;
+    top: 100px;
+    margin: auto;
+    background-color: white;
+    width: 80%;
+    z-index: 100;
+    text-align: center;
+}
+
+#close-content{
+    display: none;
+}
