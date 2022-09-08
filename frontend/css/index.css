@@ -1,0 +1,7 @@
+.carousel-cont{
+    width: 60%;
+    aspect-ratio: 4/3;
+    /* aspect-ratio: 16/9; */
+    margin: auto;
+    border-radius: 20px;
+}
