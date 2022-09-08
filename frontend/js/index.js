@@ -147,12 +147,16 @@ async function apiCall(){
         blogCont.append(Card);
     }
 
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', async function(e) {
         e = e || window.event;
         var target = e.target;
             text = target.id || target.innerText;
         var content=document.getElementById('blog-content');
-        content.innerHTML="Title: "+ data[text]['title'] + "<br>" + "Body: "+data[text]['body'];
+        const response =await fetch(`https://jsonplaceholder.typicode.com/posts/${data[text]['id']}`,{method:'GET'});
+    // console.log(response.status);
+    const d=await response.json();
+    // console.log(d);
+        content.innerHTML='Title: '+ d['title']+ '<br>' + 'Body: '+d['body'];
         content.style.display="block";
         closebtn.style.display="inline-block";
     }, false);
@@ -162,3 +166,15 @@ async function apiCall(){
 
 // const data = apiCall();
 apiCall();
+
+
+const submitbtn=document.getElementById('submit');
+
+submitbtn.addEventListener("click",()=>{
+    console.log(
+        {
+            'Name':document.getElementById('name').value,
+            'Date':document.getElementById('date').value
+        }
+    );
+});
